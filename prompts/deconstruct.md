@@ -25,19 +25,41 @@ Objective: Deconstruct the User Input into a rigorous Holonic Hierarchy (Part A)
 3. **Type Assignment:** Label each found Holon as [System], [Episteme], or [Ghost Holon].
 4. **Role Extraction:** What role is the system playing?
 5. **Ghost Hunting:** Flag any agent-like nouns that are not System or Episteme.
-
-**Output Format:**
-
-|**ID**|**Name**|**Type**|**Role**|**Manifestation**|**Parent ID**|
-|---|---|---|---|---|---|
-|H.1|...|...|...|...|...|
+6. **Problem Reframing:** Rewrite the Input using the found Holons. Make sure that all the Holons in the reframed problem statement are included in the 
+   holons list.
 
 **Ontological Audit:**
 
 - List any Category Errors found (e.g., attributing agency to a document).
 - Propose "Re-instantiation" for Ghost Holons.
+ 
+**Output Format:**
+
+```json
+{
+  "holons": [{
+    "id": "H.1",
+    "name": "...",
+    "type": "System | Episteme | Ghost",
+    "role": "...",
+    "manifestation": "...",
+    "parentID": "H.x"
+    }],
+  "reframedProblem": "...",
+  "categoryErrors": [{
+    "description": "...",
+    "violation": "...",
+    "correction": "..."
+  }],
+  "ghostReinstantiations": [{
+    "from": "...",
+    "to": "..."
+  }]
+}
+```
 
 ---
+
 # Appendix: Referenced FPF Patterns
 
 ## A.1 Holonic Foundation
