@@ -19,6 +19,12 @@ The **FPF Thinker Assistant** is a specialized Model Context Protocol (MCP) serv
 - **Standalone MCP Server:** The application runs as an independent process exposing MCP capabilities (Prompts, Tools).
 - **Prompts as Code:** Logic layer reads and parses Markdown prompt templates from the local filesystem rather than using hardcoded strings.
 
+### Component Design
+- **Specification Pattern:** derived from `fpf-governance-mcp`. Each MCP capability (Prompt, Tool) must be encapsulated in a dedicated class implementing a common interface (e.g., `PromptSpecification`).
+    - **Contract:** The interface must expose the Model (metadata/schema) and the Controller (handler function) separately.
+    - **Builder Support:** The interface should provide a default method to convert the implementation into the native SDK's builder format (e.g., `SyncPromptRegistration`).
+    - **Registration:** Main server class aggregates these components rather than defining inline logic.
+
 ### Testing Strategy
 - **Unit Testing:** JUnit 5 for core logic (Prompt parsing, Request handling).
 - **Mocking:** No mocks! Utilize the 'Testing without mocks' approach as described by James Shore.

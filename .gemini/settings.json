@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "thinker": {
+      "command": "java",
+      "args": [
+        "-jar",
+        "./target/fpf-thinker-0.1.0-SNAPSHOT.jar"
+      ],
+      "env": {
+        "FPF_PROMPTS_DIR": "./prompts"
+      }
+    }
+  }
+}
